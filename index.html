@@ -4,288 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepesh Kumar Gupta</title>
+    <meta name="description" content="The portfolio of Deepesh Kumar Gupta, a Senior Lead Full Stack Developer with over 13 years of experience in building scalable and resilient systems.">
+    <title>Deepesh Kumar Gupta - Senior Lead Full Stack Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-
-        header {
-            background-color: #2c2c2c;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
-
-        .progress-bar {
-            height: 4px;
-            background-color: #fca311;
-            width: 0%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: width 0.1s;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #fca311;
-        }
-
-        main {
-            padding-top: 5rem;
-        }
-
-        section {
-            padding: 2rem;
-            margin: 0 2rem;
-            border-bottom: 1px solid #333;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #fca311;
-        }
-
-        #home {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-        }
-
-        .home-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .home-text {
-            max-width: 600px;
-        }
-
-        .home-img img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fca311;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #fca311;
-            color: #1a1a1a;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: background-color 0.3s, color 0.3s;
-            border: 1px solid #fca311;
-        }
-
-        .btn:hover {
-            background-color: #1a1a1a;
-            color: #fca311;
-        }
-
-        #about,
-        #contact {
-            text-align: center;
-        }
-
-        .social-media {
-            margin-top: 1rem;
-        }
-
-        .social-media a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #fca311;
-        }
-
-        .experience-item {
-            border-left: 2px solid #fca311;
-            padding-left: 2rem;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -11px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background-color: #fca311;
-            border-radius: 50%;
-        }
-
-        .experience-item h3 {
-            margin: 0;
-        }
-
-        .experience-item h4 {
-            margin: 0.5rem 0;
-        }
-
-        .experience-item p {
-            margin: 0.5rem 0;
-        }
-
-        .education-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-category h3 {
-            border-bottom: 2px solid #fca311;
-            padding-bottom: 0.5rem;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skills-list span {
-            background-color: #333;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #2c2c2c;
-        }
-
-        .wave {
-            animation-name: wave-animation;
-            animation-duration: 2.5s;
-            animation-iteration-count: infinite;
-            transform-origin: 70% 70%;
-            display: inline-block;
-        }
-
-        @keyframes wave-animation {
-            0% {
-                transform: rotate(0.0deg)
-            }
-
-            10% {
-                transform: rotate(14.0deg)
-            }
-
-            20% {
-                transform: rotate(-8.0deg)
-            }
-
-            30% {
-                transform: rotate(14.0deg)
-            }
-
-            40% {
-                transform: rotate(-4.0deg)
-            }
-
-            50% {
-                transform: rotate(10.0deg)
-            }
-
-            60% {
-                transform: rotate(0.0deg)
-            }
-
-            100% {
-                transform: rotate(0.0deg)
-            }
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            -webkit-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
-            background-color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #2c2c2c;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .home-content {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -303,6 +29,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#methodologies">Methodologies</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -313,171 +40,134 @@
         <section id="home">
             <div class="home-content">
                 <div class="home-text">
-                    <h1>Hello there <span class="wave">👋</span></h1>
-                    <h2>I am Deepesh Kumar Gupta 🤙</h2>
-                    <p class="tagline">I am a <span class="typing-animation"></span></p>
-                    <a  class="btn" download>Download CV</a>
-                    <!-- href="assets/Deepesh_Delta.pdf"-->
+                    <h1>Deepesh Kumar Gupta</h1>
+                    <p class="tagline">A <span class="typing-animation"></span></p>
+                    <p>Senior Lead Full Stack Developer with a passion for building resilient, high-scale systems.</p>
+                    <a href="assets/Deepesh_Delta.pdf" class="btn" download>Download CV</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
                 <div class="home-img">
-                    <img src="assets/Deepesh_profile.jpeg"  alt="Deepesh Kumar Gupta">
-                    
+                    <img src="assets/Deepesh_profile.jpeg" alt="Deepesh Kumar Gupta">
                 </div>
             </div>
         </section>
 
         <section id="about">
-            <h2>About</h2>
-            <p>With over 13 years of experience at the intersection of robust enterprise architecture and rapid digital transformation, I specialize in building resilient, high-scale systems that bridge the gap between complex business needs and technical excellence.
-
-My career has been defined by a commitment to "leading from the front." Whether I’m architecting Java/Spring Boot microservices on AWS or modernizing legacy monoliths, my goal is always the same: absolute system resiliency and peak engineering velocity. I don’t just manage SDLC; I own it.
-
-Currently, I am focused on the next frontier of developer productivity—integrating AI tools and Model Context Protocol (MCP) servers to redefine the speed-to-market. By automating the mundane and optimizing the complex, I empower my teams to focus on high-impact innovation rather than maintenance.</p>
+            <h2>About Me</h2>
+            <p>With over 13 years of experience at the intersection of robust enterprise architecture and rapid digital transformation, I specialize in building resilient, high-scale systems that bridge the gap between complex business needs and technical excellence. My career is defined by a commitment to leading from the front, architecting Java/Spring Boot microservices on AWS, and modernizing legacy monoliths to achieve absolute system resiliency and peak engineering velocity. Currently, I am focused on leveraging AI tools and Model Context Protocol (MCP) servers to redefine developer productivity and accelerate speed-to-market.</p>
         </section>
 
         <section id="experience">
             <h2>Work Experience</h2>
             <div class="experience-item">
-                <h3>05/2022 – Present</h3>
-                <h4>Senior Lead Full Stack Developer | Delta Airlines</h4>
+                <h3>Senior Lead Full Stack Developer</h3>
+                <h4>Delta Airlines | 05/2022 – Present</h4>
                 <p>DAL Global Technology Hub LLP</p>
                 <ul>
-                    <li>Leading development and modernization of core airline applications using Java, Spring Boot, Microservices, and AWS.</li>
-                    <li>Designed scalable architecture with event-driven microservices and secure API patterns.</li>
-                    <li>Enhanced system observability using AWS CloudWatch, Dynatrace dashboards, and PagerDuty alert workflows.</li>
-                    <li>Implemented automated monitoring pipelines with Sumo Logic for log analytics.</li>
-                    <li>Built React and TypeScript-based user interfaces improving performance and usability.</li>
-                    <li>Owned end-to-end SDLC including requirement gathering, development, deployments, and production support.</li>
+                    <li>Lead the development and modernization of core airline applications using Java, Spring Boot, Microservices, and AWS.</li>
+                    <li>Architected and implemented scalable, event-driven microservices and secure API patterns.</li>
+                    <li>Enhanced system observability with AWS CloudWatch, Dynatrace dashboards, and PagerDuty alerts.</li>
+                    <li>Built and maintained automated monitoring pipelines using Sumo Logic for log analytics.</li>
+                    <li>Developed high-performance user interfaces with React and TypeScript.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>06/2020 - 05/2022</h3>
-                <h4>Senior Full Stack Developer | 365 Retail Markets</h4>
+                <h3>Senior Full Stack Developer</h3>
+                <h4>365 Retail Markets | 06/2020 - 05/2022</h4>
                 <p>Nous Info Solutions</p>
                 <ul>
-                    <li>Built scalable microservices for vending automation solutions with Java, Spring Boot, and AWS.</li>
-                    <li>Enhanced systems with monitoring integrations using CloudWatch and log analytics.</li>
-                    <li>Developed interactive front-end applications using React and TypeScript.</li>
-                    <li>Automated build, deployment, and code quality processes using Jenkins and Gradle.</li>
+                    <li>Built scalable microservices for vending automation solutions using Java, Spring Boot, and AWS.</li>
+                    <li>Developed interactive front-end applications with React and TypeScript.</li>
+                    <li>Automated CI/CD pipelines using Jenkins and Gradle to improve code quality and deployment frequency.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>07/2018 – 03/2020</h3>
-                <h4>Senior Full Stack Developer | MHP – Porsche AG</h4>
+                <h3>Senior Full Stack Developer</h3>
+                <h4>MHP – A Porsche Company | 07/2018 – 03/2020</h4>
                 <p>Sapres (Frankfurt, Germany)</p>
                 <ul>
-                    <li>Designed EV charging service backend using microservices and cloud-native architecture.</li>
-                    <li>Integrated monitoring and performance dashboards using Dynatrace.</li>
-                    <li>Built Angular applications for admin and fleet management.</li>
-                    <li>Developed REST APIs and ensured secure authentication workflows.</li>
+                    <li>Designed and developed the backend for an EV charging service using microservices architecture.</li>
+                    <li>Built and maintained Angular applications for admin and fleet management.</li>
+                    <li>Integrated Dynatrace for performance monitoring and dashboarding.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>04/2016 - 06/2018</h3>
-                <h4>Senior Developer | CITI Bank</h4>
+                <h3>Senior Developer</h3>
+                <h4>CITI Bank | 04/2016 - 06/2018</h4>
                 <p>Cognizant (CTS)</p>
                 <ul>
-                    <li>Developed Global Positioning Data Warehouse with Java, Spring, Kafka, React, and AWS.</li>
-                    <li>Integrated observability pipelines and automated deployments through CI/CD processes.</li>
-                    <li>Contributed to test automation using JUnit and Selenium.</li>
+                    <li>Developed and maintained the Global Positioning Data Warehouse using Java, Spring, Kafka, and React.</li>
+                    <li>Contributed to the automation of deployment processes and test cases.</li>
                 </ul>
             </div>
              <div class="experience-item">
-                <h3>06/2014 - 01/2016</h3>
-                <h4>Full Stack Developer | Kifiya Financial Tech</h4>
+                <h3>Full Stack Developer</h3>
+                <h4>Kifiya Financial Tech | 06/2014 - 01/2016</h4>
                 <p>CMC & TCS</p>
                 <ul>
-                    <li>Developed scalable tax filing platform for Bhutan government services.</li>
-                    <li>Owned development, deployment, and production support responsibilities.</li>
-                    <li>Developed Unified Billing System integrating multiple utilities using Java and Spring MVC.</li>
-                    <li>Performed requirement analysis, backend development, and production releases.</li>
+                    <li>Developed a scalable tax filing platform and a Unified Billing System for government services.</li>
+                    <li>Owned the full software development lifecycle from requirements to production support.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>12/2013 – 06/2014</h3>
-                <h4>Junior Developer | Assam Government</h4>
+                <h3>Junior Developer</h3>
+                <h4>Assam Government | 12/2013 – 06/2014</h4>
                 <p>CMC & TCS</p>
                 <ul>
-                    <li>Developed workflow-based digital file management system (SLPO).</li>
-                    <li>Enhanced document approval automation and improved operational efficiency.</li>
+                    <li>Developed a workflow-based digital file management system to improve operational efficiency.</li>
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>06/2013 - 12/2013</h3>
-                <h4>Junior Developer | Belgacom</h4>
+                <h3>Junior Developer</h3>
+                <h4>Belgacom | 06/2013 - 12/2013</h4>
                 <p>PCS Global</p>
                 <ul>
-                    <li>Worked on IPTV platform including VOD, PVR, and subscriber management.</li>
-                    <li>Developed Java and Spring-based modules with Oracle backend.</li>
+                    <li>Worked on an IPTV platform, developing modules for VOD, PVR, and subscriber management.</li>
                 </ul>
             </div>
         </section>
         
         <section id="skills">
-            <h2>Skills</h2>
+            <h2>Core Competencies</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Programming</h3>
+                    <h3>Programming & Languages</h3>
                     <div class="skills-list">
                         <span>Java 11/17</span>
-                        <span>Java EE</span>
+                        <span>Python</span>
+                        <span>Groovy</span>
                         <span>JavaScript (ES6+)</span>
                         <span>TypeScript</span>
                         <span>Node.js</span>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
+                        <span>HTML5 & CSS3</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Cloud Platforms</h3>
+                    <h3>Cloud & DevOps</h3>
                     <div class="skills-list">
-                        <span>AWS</span>
-                        <span>EC2</span>
-                        <span>S3</span>
-                        <span>RDS</span>
-                        <span>Lambda</span>
-                        <span>SQS</span>
-                        <span>SNS</span>
-                        <span>API Gateway</span>
-                        <span>CloudWatch</span>
-                        <span>CloudFormation</span>
-                        <span>IAM</span>
-                        <span>EKS</span>
-                        <span>ECS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Observability & Monitoring</h3>
-                    <div class="skills-list">
-                        <span>AWS CloudWatch</span>
-                        <span>Dynatrace</span>
-                        <span>Sumo Logic</span>
-                        <span>PagerDuty</span>
-                        <span>Grafana</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & CI/CD</h3>
-                    <div class="skills-list">
-                        <span>Jenkins</span>
-                        <span>GitLab CI/CD</span>
-                        <span>GitHub Actions</span>
-                        <span>AWS CodePipeline</span>
+                        <span>AWS (EC2, S3, RDS, Lambda, SQS, SNS, EKS, ECS)</span>
+                        <span>Azure</span>
+                        <span>GCP</span>
                         <span>Docker</span>
                         <span>Kubernetes</span>
+                        <span>Jenkins</span>
+                        <span>GitLab CI/CD</span>
+                        <span>Terraform</span>
+                        <span>Ansible</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Frameworks</h3>
+                    <h3>Frameworks & Libraries</h3>
                     <div class="skills-list">
                         <span>Spring Boot</span>
-                        <span>Spring MVC</span>
                         <span>Spring Security</span>
-                        <span>Hibernate</span>
+                        <span>Spring Cloud</span>
                         <span>Microservices</span>
-                        <span>REST</span>
+                        <span>Kafka</span>
                         <span>React</span>
-                        <span>React Native</span>
+                        <span>Angular</span>
+                        <span>Vue.js</span>
+                        <span>Hibernate</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -486,36 +176,77 @@ Currently, I am focused on the next frontier of developer productivity—integra
                         <span>MySQL</span>
                         <span>PostgreSQL</span>
                         <span>Oracle</span>
-                        <span>DB2</span>
                         <span>DynamoDB</span>
+                        <span>MongoDB</span>
+                        <span>Redis</span>
+                        <span>Cassandra</span>
                     </div>
                 </div>
-                 <div class="skill-category">
-                    <h3>Tools</h3>
+                <div class="skill-category">
+                    <h3>Observability</h3>
                     <div class="skills-list">
-                        <span>IntelliJ</span>
-                        <span>Eclipse</span>
-                        <span>Git</span>
-                        <span>GitLab</span>
-                        <span>GitHub</span>
-                        <span>SVN</span>
+                        <span>CloudWatch</span>
+                        <span>Dynatrace</span>
+                        <span>Sumo Logic</span>
+                        <span>Grafana</span>
+                        <span>PagerDuty</span>
+                        <span>Splunk</span>
                     </div>
                 </div>
-                 <div class="skill-category">
+                <div class="skill-category">
                     <h3>Testing</h3>
                     <div class="skills-list">
                         <span>JUnit</span>
                         <span>Mockito</span>
                         <span>JMeter</span>
                         <span>Selenium</span>
+                        <span>TestNG</span>
+                        <span>Cypress</span>
                     </div>
                 </div>
-                 <div class="skill-category">
-                    <h3>Methodologies</h3>
+            </div>
+        </section>
+
+        <section id="methodologies">
+            <h2>Agile & Product Management</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Agile & Scrum</h3>
                     <div class="skills-list">
-                        <span>Agile</span>
-                        <span>Scrum</span>
-                        <span>Waterfall</span>
+                        <span>Scrum Master</span>
+                        <span>Kanban</span>
+                        <span>Sprint Planning</span>
+                        <span>Retrospectives</span>
+                        <span>Backlog Grooming</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Requirement & Analysis</h3>
+                    <div class="skills-list">
+                        <span>Requirement Gathering</span>
+                        <span>User Stories</span>
+                        <span>Use Cases</span>
+                        <span>Gap Analysis</span>
+                        <span>Feasibility Studies</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>System Design</h3>
+                    <div class="skills-list">
+                        <span>System Design</span>
+                        <span>Microservices Architecture</span>
+                        <span>Event-Driven Architecture</span>
+                        <span>Domain-Driven Design</span>
+                        <span>High-level & Low-level Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership</h3>
+                    <div class="skills-list">
+                        <span>Technical Leadership</span>
+                        <span>Mentoring</span>
+                        <span>Code Reviews</span>
+                        <span>Team Collaboration</span>
                     </div>
                 </div>
             </div>
@@ -524,16 +255,17 @@ Currently, I am focused on the next frontier of developer productivity—integra
         <section id="education">
             <h2>Education</h2>
             <div class="education-item">
-                <h3>B.Tech in Electronics & Communication Engineering - 2013</h3>
-                <p>West Bengal University of Technology</p>
+                <h3>B.Tech in Electronics & Communication Engineering</h3>
+                <p>West Bengal University of Technology, 2013</p>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:deepesh3029@gmail.com.com">deepesh3029@gmail.com</a></p>
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out!</p>
+            <a href="mailto:deepesh3029@gmail.com" class="btn">Say Hello</a>
             <div class="social-media">
-                <a href="#" target="https://www.linkedin.com/in/deepesh3029"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/deepesh3029" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/deepesh3029" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://x.com/deepesh3029" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
@@ -541,71 +273,10 @@ Currently, I am focused on the next frontier of developer productivity—integra
     </main>
 
     <footer>
-        <p>&copy; 2024 Deepesh Kumar Gupta</p>
+        <p>&copy; 2026 Deepesh Kumar Gupta. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        const typingAnimationElement = document.querySelector('.typing-animation');
-
-        const roles = [
-            "Lead Developer II",
-            "Full Stack Engineer",
-            "Cloud & Microservices Specialist"
-        ];
-
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentRole = roles[roleIndex];
-            const currentChar = currentRole.substring(0, charIndex);
-
-            typingAnimationElement.textContent = currentChar;
-
-            if (!isDeleting && charIndex < currentRole.length) {
-                charIndex++;
-                setTimeout(type, 100);
-            } else if (isDeleting && charIndex > 0) {
-                charIndex--;
-                setTimeout(type, 50);
-            } else {
-                isDeleting = !isDeleting;
-                if (!isDeleting) {
-                    roleIndex = (roleIndex + 1) % roles.length;
-                }
-                setTimeout(type, 1200);
-            }
-        }
-
-        type();
-
-        window.addEventListener('scroll', () => {
-            const progressBar = document.querySelector('.progress-bar');
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollProgress = (scrollTop / scrollHeight) * 100;
-            progressBar.style.width = scrollProgress + '%';
-        });
-
-        const hamburger = document.querySelector('.hamburger');
-        const navUl = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            navUl.classList.toggle('active');
-        });
-
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
