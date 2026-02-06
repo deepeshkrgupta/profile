@@ -11,7 +11,398 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+}
+
+.progress-bar {
+    height: 3px;
+    background-color: #0077b5;
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.1s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0077b5;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #0077b5;
+    border-bottom: 2px solid #0077b5;
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1,
+h2,
+h3 {
+    color: #003d5b;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #0077b5;
+}
+
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #fff;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid #0077b5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0077b5;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid #0077b5;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #005f94;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0077b5;
+}
+
+.btn-secondary:hover {
+    background-color: #0077b5;
+    color: #fff;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-media {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-media a:hover {
+    color: #0077b5;
+    transform: scale(1.2);
+}
+
+.experience-item {
+    border-left: 3px solid #0077b5;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #0077b5;
+    border-radius: 50%;
+}
+
+.experience-item h3 {
+    margin: 0;
+    color: #003d5b;
+    font-size: 1.5rem;
+}
+
+.experience-item h4 {
+    margin: 0.5rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+.experience-item p {
+    margin: 0.5rem 0;
+    color: #777;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.education-item h3 {
+    font-size: 1.5rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h3 {
+    border-bottom: 2px solid #0077b5;
+    padding-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: #003d5b;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.skills-list span {
+    background-color: #e0e0e0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #003d5b;
+    color: #fff;
+}
+
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home-img img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -276,7 +667,106 @@
         <p>&copy; 2026 Deepesh Kumar Gupta. All Rights Reserved.</p>
     </footer>
 
-    <script src="assets/script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Typing animation
+    const typingAnimationElement = document.querySelector('.typing-animation');
+    if (typingAnimationElement) {
+        const roles = [
+            "Lead Developer II",
+            "Full Stack Engineer",
+            "Cloud & Microservices Specialist"
+        ];
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            const currentChar = currentRole.substring(0, charIndex);
+
+            typingAnimationElement.textContent = currentChar;
+            typingAnimationElement.style.color = getRoleColor(roleIndex);
+
+
+            if (!isDeleting && charIndex < currentRole.length) {
+                charIndex++;
+                setTimeout(type, 100);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(type, 50);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+                setTimeout(type, 1200);
+            }
+        }
+        
+        function getRoleColor(index) {
+            const colors = ['#0077b5', '#00a8e8', '#003d5b'];
+            return colors[index % colors.length];
+        }
+
+        type();
+    }
+
+    // Progress bar on scroll
+    window.addEventListener('scroll', () => {
+        const progressBar = document.querySelector('.progress-bar');
+        if(progressBar) {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollProgress = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = scrollProgress + '%';
+        }
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+
+    if (hamburger && navUl) {
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+
+    // Active navigation link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    function changeNav() {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        navLinks.forEach((link) => link.classList.remove('active'));
+        if(navLinks[index]) {
+            navLinks[index].classList.add('active');
+        }
+    }
+
+    changeNav();
+    window.addEventListener('scroll', changeNav);
+
+});
+</script>
 </body>
 
 </html>
